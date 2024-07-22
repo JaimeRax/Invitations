@@ -1,12 +1,15 @@
+@font-face {
+    font-family: 'BrittanySignature';
+    src: url('Fonts/brittany_signature/BrittanySignature.ttf') format('truetype');
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
     background-color: #f7f1f2;
-    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
 }
 .container {
     width: 100%;
@@ -22,21 +25,25 @@ body {
 }
 .text-overlay {
     position: absolute;
-    top: 50%;
+    top: 71%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
 }
-.text-overlay h1 {
+.text-overlay h2 {
     margin: 0;
-    font-size: 2em;
-    color: #000;
+    font-size: 3.5em;
+    color: #f7f1f2;
+    font-family: 'BrittanySignature', sans-serif; /* Usar Brittany */
+    animation: slide-in-right 1s forwards; /* Animación desde la derecha */
 }
 .text-overlay p {
     margin: 0;
-    font-size: 1.5em;
-    color: #000;
+    font-size: 3em;
+    color: #f7f1f2;
+    font-family: 'Times New Roman', Times, serif;
+    animation: slide-in-left 1s forwards; /* Animación desde la izquierda */
 }
 .scroll-indicator {
     position: absolute;
@@ -48,8 +55,8 @@ body {
 }
 .scroll-indicator span {
     display: block;
-    font-size: 1.2em;
-    color: #000;
+    font-size: 2em;
+    color: #f7f1f2; 
 }
 .scroll-indicator img {
     margin-top: 20px;
@@ -57,6 +64,25 @@ body {
     height: 40px;
     animation: bounce 2s infinite;
 }
+.section2{
+  height: 210px;
+  background-color: #550124;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 2; /* Espacio entre líneas */
+  color: white;
+  padding: 110px;
+}
+.heart-icon {
+  text-align: center;
+  margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+}
+
+.heart-icon img {
+  width: 25px;
+  height: 25px;
+}
+
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
@@ -66,5 +92,28 @@ body {
     }
     60% {
         transform: translateY(-5px);
+    }
+}
+
+/* Keyframes para las animaciones */
+@keyframes slide-in-left {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
